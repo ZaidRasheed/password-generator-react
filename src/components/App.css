@@ -100,4 +100,5 @@ input[type=range]::-webkit-slider-thumb {
 .strength{
   text-align: center;
   color: brown;
+  font-size: 30px;
 }
