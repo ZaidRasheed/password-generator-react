@@ -11,17 +11,6 @@ function App() {
 
   const [refresh, setRefresh] = useState(true);
 
-  useEffect(() => {
-    let result = '';
-    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef~!@#$%^&*()_+-=`"{}[];?.,><?/|:ghijklmnopqrstuvwxyz0123456789';
-    let charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    setPassword(result);
-  }, [length, refresh]);
-
-
   const changeInSlider = (event) => {
     let num = event.target.value
     if (!num) {
@@ -34,10 +23,23 @@ function App() {
       setLength(num);
     }
     const element = document.getElementById("myInput");
-    var value = (event.target.value - element.min) / (element.max - element.min) * 100
+    var value = (num - element.min) / (element.max - element.min) * 100
     element.style.background = 'linear-gradient(to right, #C21010 0%, #C21010 ' + value + '%, #fff ' + value + '%, white 100%)'
   }
 
+  const generatePassword = () => {
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef~!@#$%^&*()_+-=`"{}[];?.,><?/|:ghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    setPassword(result);
+  }
+
+  useEffect(() => {
+    generatePassword();
+  }, [length, refresh]);
 
   return (
     <div className="App">
