@@ -19,7 +19,6 @@ const Password = (props) => {
             setColor("#2B7A0B");
             setStrength("Strong");
         }
-        console.log(props.length)
     }, [props.length])
 
     return (
