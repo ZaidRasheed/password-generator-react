@@ -84,10 +84,11 @@ input[type=range]::-webkit-slider-thumb {
 }
 .buttons button{
   cursor: pointer;
+  color: black;
   border: solid 2px #EB1D36;
   background-color: transparent;
   font-size: 2rem;
-  padding: 3px;
+  padding: 5px;
   transition: ease-in 0.2s;
   border-radius: 8px;
   margin: 0 10px;
