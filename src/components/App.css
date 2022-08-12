@@ -75,6 +75,8 @@ input[type=range]::-webkit-slider-thumb {
   text-overflow: ellipsis;
   max-width: 600px;
   font-size: 1.5rem;
+  font-family: sans-serif;
+  letter-spacing: 1px;
 }
 .buttons{
   width: 150px;
