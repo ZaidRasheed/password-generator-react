@@ -24,7 +24,7 @@ const Password = (props) => {
     return (
         <div>
             <h2 className="strength" style={{ color: color }}>{strength}</h2>
-            <h3 className="password" style={{ color: color }}>{props.password}</h3>
+            <h3 className="password" >{props.password}</h3>
         </div>
     )
 }
