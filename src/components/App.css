@@ -115,7 +115,7 @@ input[type="checkbox"]:checked::before {
   display: inline-block;
 }
 .first>input{
-  color: #112D4E;
+  color: #3F72AF;
   border-radius: 5px;
   border-color: #112D4E;
   background-color: #F9F7F7 ;
@@ -141,7 +141,7 @@ input[type="checkbox"]:checked::before {
   font-size: 1.5rem;
   font-family: sans-serif;
   letter-spacing: 1px;
-  color: #112D4E;
+  color: #3F72AF;
 }
 .buttons{
   width: 150px;
