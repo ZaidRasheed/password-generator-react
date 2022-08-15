@@ -149,7 +149,7 @@ input[type="checkbox"]:checked::before {
 }
 .buttons button{
   cursor: pointer;
-  color: #112D4E;
+  color: #3F72AF;
   border: solid 2px #112D4E;
   background-color: transparent;
   font-size: 2rem;
