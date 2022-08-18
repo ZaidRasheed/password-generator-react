@@ -124,14 +124,16 @@ input[type="checkbox"]:checked::before {
   display: inline-block;
 }
 .manualInput{
+  font-weight: 600;
   padding: 7px 0 7px 3px;
   font-size: 1.5rem;
 }
 .password{
-  text-overflow:clip;
+  box-sizing: border-box;
+  font-weight: 600;
   border: 2px solid rgba(0, 0, 0, 0.6);
+  width: 100%;
   padding: 8px;
-  min-height: 2rem;
   border-radius: 10px;
   line-height: 2rem;
   white-space: nowrap;
@@ -142,25 +144,43 @@ input[type="checkbox"]:checked::before {
   font-family: sans-serif;
   letter-spacing: 1px;
   color: #3F72AF;
+  margin-bottom: 10px;
 }
 .buttons{
   width: 150px;
   margin: 25px auto 0;
+  text-align: center;
 }
 .buttons button{
   cursor: pointer;
   color: #3F72AF;
   border: solid 2px #112D4E;
   background-color: transparent;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 5px;
   transition: ease-in 0.2s;
   border-radius: 8px;
   margin: 0 10px;
 }
+#copy{
+  transition: ease-in 0.3s;
+}
+#copy.copied{
+  color: white;
+  background-color: #2EB086;
+  border: solid 2px #2EB086;
+}
+.copiedLabel{
+  margin-bottom: 0;
+  transition: ease-in 0.3s;
+  color: #2EB086;
+}
 .buttons button:hover{
   background-color: #112D4E;
   color: white;
+}
+.fa-circle-check{
+  display: none;
 }
 .strength{
   text-align: center;
@@ -174,8 +194,7 @@ input[type="checkbox"]:checked::before {
     margin-right: 5px;
     font-size: 13px;
   }
-  .manualInput{
-    font-size: 1rem;
+  .buttons button{
+    font-size: 2rem;
   }
-
 }
