@@ -37,3 +37,21 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+//! change strength of password and color according to its length 
+
+//! change the copy button back to normal
+
+//! generate a password according the options selected
+
+//! length of the password 
+
+//! the password
+
+//! we also need to change the fill color length to make move with the thumb
+
+//! we need to generate a new password whenever the length or type changes or basically when the user want a new one
+
+//! when the content of the desired password changes we have to update the requirements
+
+//! whenever the slider value changes we have to change the value of manual input accordingly
