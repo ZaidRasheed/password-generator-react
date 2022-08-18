@@ -6,7 +6,7 @@ const Slider = (props) => {
 
     const change = (event) => {
         //! copy content to clipboard and change the copy button appearance 
-        
+
         copyToClipBoard();
         event.currentTarget.firstChild.style.display = 'none';
         event.currentTarget.firstChild.nextSibling.style.display = 'inline-block';
@@ -16,21 +16,37 @@ const Slider = (props) => {
 
     return (
         <div>
-            <div className="slideContainer">
-                <input id="myInput" type="range" min="0" max="40" className="slider" value={props.length} onChange={props.changeInSlider} />
+            <div
+                className="slideContainer">
+                <input
+                    id="myInput"
+                    type="range"
+                    min="0"
+                    max="40"
+                    className="slider"
+                    value={props.length}
+                    onChange={props.changeInSlider} />
             </div>
-            <div className="buttons">
-                <button onClick={() => {
-                    props.setRefresh(!props.refresh);
-                }}><i className="fa-solid fa-arrows-rotate"></i></button>
-                <button id="copy" onClick={change}>
+            <div
+                className="buttons">
+                <button
+                    onClick={() => {
+                        props.setRefresh(!props.refresh);
+                    }}>
+                    <i className="fa-solid fa-arrows-rotate"></i>
+                </button>
+                <button
+                    id="copy"
+                    onClick={change}>
                     <i className="fa-solid fa-copy"></i>
                     <i className="fa-solid fa-circle-check"></i>
                 </button>
-                <h3 className="copiedLabel" style={{opacity:props.copiedLabelOpacity}}>Copied</h3>
-
+                <h3
+                    className="copiedLabel"
+                    style={{ opacity: props.copiedLabelOpacity }}>
+                    Copied
+                </h3>
             </div>
-
         </div>
     )
 }

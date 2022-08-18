@@ -49,7 +49,7 @@ function App() {
     else {
       setLength(num);
     }
-    
+
     //! we also need to change the fill color length to make move with the thumb
 
     const element = document.getElementById("myInput");
