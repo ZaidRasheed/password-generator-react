@@ -48,9 +48,11 @@
 
 //! the password
 
+//! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
+
 //! we also need to change the fill color length to make move with the thumb
 
-//! we need to generate a new password whenever the length or type changes or basically when the user want a new one
+//! we need to generate a new password whenever the length or type changes or basically when the user wants a new one
 
 //! when the content of the desired password changes we have to update the requirements
 
