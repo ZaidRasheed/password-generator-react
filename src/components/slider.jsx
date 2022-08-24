@@ -15,7 +15,7 @@ const Slider = (props) => {
     }
 
     return (
-        <div>
+        <>
             <div
                 className="slideContainer">
                 <input
@@ -47,7 +47,7 @@ const Slider = (props) => {
                     Copied
                 </h3>
             </div>
-        </div>
+        </>
     )
 }
 

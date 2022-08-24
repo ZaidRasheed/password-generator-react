@@ -24,7 +24,7 @@ const Password = (props) => {
     }, [props.length])
 
     return (
-        <div>
+        <>
             <h2
                 className="strength"
                 style={{ color: color }}>{strength}
@@ -40,7 +40,7 @@ const Password = (props) => {
                 maxLength="40"
                 readOnly
             />
-        </div>
+        </>
     )
 }
 export default Password;

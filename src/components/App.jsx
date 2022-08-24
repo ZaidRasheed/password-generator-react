@@ -67,27 +67,58 @@ function App() {
     //! generate a password according the options selected
     let result = '';
     let characters = '';
+
+    //! all the password options
+    let smallLetters = 'abcdefghijklmnopqrstuvwxyz'
+    let capitals = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let symbols = '~!@#$%^&*()_+-=`"{}[];?.,><?/|:';
+    let numbers = '0123456789'
+
     if (passwordType.lowerCase) {
-      characters += 'abcdefghijklmnopqrstuvwxyz';
+      characters += smallLetters;
     }
     if (passwordType.upperCase) {
-      characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      characters += capitals;
     }
     if (passwordType.symbols) {
-      characters += '~!@#$%^&*()_+-=`"{}[];?.,><?/|:';
+      characters += symbols;
     }
     if (passwordType.numbers) {
-      characters += '0123456789';
+      characters += numbers;
     }
-    let charactersLength = characters.length;
+    let lowerCaseFlag = true;
+    let upperCaseFlag = true;
+    let symbolsFlag = true;
+    let numbersFlag = true;
+
     for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
+      
+      if (passwordType.lowerCase && lowerCaseFlag) {
+        lowerCaseFlag = false;
+        result += smallLetters.charAt(Math.floor(Math.random() * smallLetters.length));
+      }
+      else if (passwordType.upperCase && upperCaseFlag) {
+        upperCaseFlag = false;
+        result += capitals.charAt(Math.floor(Math.random() * capitals.length));
+      }
+      else if (passwordType.symbols && symbolsFlag) {
+        symbolsFlag = false;
+        result += symbols.charAt(Math.floor(Math.random() * symbols.length));
+      }
+      else if (passwordType.numbers && numbersFlag) {
+        numbersFlag = false;
+        result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+      }
+      else
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
     }
+
     setPassword(result);
   }
 
   useEffect(() => {
-    //! we need to generate a new password whenever the length or type changes or basically when the user want a new one
+    //! we need to generate a new password whenever the length or type changes or basically when the user wants a new one
     generatePassword();
   }, [length, refresh, passwordType.upperCase, passwordType.lowerCase, passwordType.symbols, passwordType.numbers]);
 
@@ -124,8 +155,6 @@ function App() {
           copiedLabelOpacity={copiedLabelOpacity}
         />
       </div>
-
-
     </div>
   );
 }
