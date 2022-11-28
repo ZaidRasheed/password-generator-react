@@ -31,7 +31,7 @@ const Password = (props) => {
             </h2>
             {/*//! select text on click */}
             <input
-                id="zebii"
+                id="input"
                 className="password"
                 value={props.password}
                 onClick={(event) => {
