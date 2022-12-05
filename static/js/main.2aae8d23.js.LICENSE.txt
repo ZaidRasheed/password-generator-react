@@ -46,7 +46,7 @@
 
 //! length of the password 
 
-//! the password
+//! the refresh for a new password
 
 //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
 
