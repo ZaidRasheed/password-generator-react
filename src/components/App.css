@@ -1,30 +1,35 @@
-body{
+body {
   background-color: #e7eaed;
 }
-.App{
+
+.App {
   max-width: 600px;
   margin: 30px auto 0;
   font-family: "Montserrat Alternates";
-  
+
 }
-.sections{
+
+.sections {
   box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
   padding: 15px;
   border-radius: 5px;
   margin: 30px auto;
   background-color: #fff;
 }
-.title{
+
+.title {
   font-size: 3rem;
   text-align: center;
   color: #112D4E;
 }
-.slideContainer{
+
+.slideContainer {
   max-width: 100%;
   min-width: 250px;
   margin: 20px auto 20px;
   text-align: center;
 }
+
 .slider {
   background: linear-gradient(to right, #415771 0%, #415771 30%, #c2daf1 30%, #c2daf1 100%);
   border: 2px solid #fff;
@@ -51,6 +56,7 @@ input[type=range]::-ms-track {
   width: 100%;
   cursor: pointer;
 }
+
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 25px;
@@ -61,6 +67,7 @@ input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 .form-control {
   font-family: system-ui, sans-serif;
   font-size: 1.5rem;
@@ -72,6 +79,7 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: 15px;
   color: #112D4E;
 }
+
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
@@ -89,6 +97,7 @@ input[type="checkbox"] {
   display: grid;
   place-content: center;
 }
+
 input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
@@ -100,35 +109,42 @@ input[type="checkbox"]::before {
   transform-origin: bottom left;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
+
 input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
-.inputContainer{
+
+.inputContainer {
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
+  justify-content: space-around;
   margin-bottom: 30px;
 }
-.first>h1{
+
+.first>h1 {
   color: #112D4E;
   margin-right: 10px;
   display: inline-block;
 }
-.first>input{
+
+.first>input {
   color: #3F72AF;
   border-radius: 5px;
   border-color: #112D4E;
-  background-color: #F9F7F7 ;
+  background-color: #F9F7F7;
 }
-.second>h1{
+
+.second>h1 {
   display: inline-block;
 }
-.manualInput{
+
+.manualInput {
   font-weight: 600;
   padding: 7px 0 7px 3px;
   font-size: 1.5rem;
 }
-.password{
+
+.password {
   box-sizing: border-box;
   font-weight: 600;
   border: 2px solid rgba(0, 0, 0, 0.6);
@@ -146,12 +162,14 @@ input[type="checkbox"]:checked::before {
   color: #3F72AF;
   margin-bottom: 10px;
 }
-.buttons{
+
+.buttons {
   width: 150px;
   margin: 25px auto 0;
   text-align: center;
 }
-.buttons button{
+
+.buttons button {
   cursor: pointer;
   color: #3F72AF;
   border: solid 2px #112D4E;
@@ -162,39 +180,48 @@ input[type="checkbox"]:checked::before {
   border-radius: 8px;
   margin: 0 10px;
 }
-#copy{
+
+#copy {
   transition: ease-in 0.3s;
 }
-#copy.copied{
+
+#copy.copied {
   color: white;
   background-color: #2EB086;
   border: solid 2px #2EB086;
 }
-.copiedLabel{
+
+.copiedLabel {
   margin-bottom: 0;
   transition: ease-in 0.3s;
   color: #2EB086;
 }
-.buttons button:hover{
+
+.buttons button:hover {
   background-color: #112D4E;
   color: white;
 }
-.fa-circle-check{
+
+.fa-circle-check {
   display: none;
 }
-.strength{
+
+.strength {
   text-align: center;
   font-size: 30px;
 }
+
 @media screen and (max-width:400px) {
   .form-control {
     font-size: 1.3rem;
   }
-  .first{
+
+  .first {
     margin-right: 5px;
     font-size: 13px;
   }
-  .buttons button{
+
+  .buttons button {
     font-size: 2rem;
   }
 }

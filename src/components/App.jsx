@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useMemo } from 'react';
 import './App.css';
 import Slider from './slider';
 import Input from './input';
@@ -7,9 +7,6 @@ function App() {
 
   //! length of the password 
   const [length, setLength] = useState(12);
-
-  //! the password
-  const [password, setPassword] = useState("");
 
   //! the refresh for a new password
   const [refresh, setRefresh] = useState(true);
@@ -51,19 +48,24 @@ function App() {
     }
 
     //! we also need to change the fill color length to make move with the thumb
-
     const element = document.getElementById("myInput");
-    var value = (num - element.min) / (element.max - element.min) * 100
+    let value = (num - element.min) / (element.max - element.min) * 100
     element.style.background = 'linear-gradient(to right, #415771 0%, #415771 ' + value + '%, #c2daf1 ' + value + '%, #c2daf1 100%)'
   }
 
-  const generatePassword = () => {
+  //! the password
+  const password = useMemo(() => {
+
     //! change the copy button back to normal
     setCopiedLabelOpacity("0");
-    document.getElementsByClassName('fa-copy')[0].style.display = 'inline-block';
-    document.getElementsByClassName('fa-circle-check')[0].style.display = 'none';
-    document.getElementById("copy").classList.remove("copied");
+    try {
+      document.getElementsByClassName('fa-copy')[0].style.display = 'inline-block';
+      document.getElementsByClassName('fa-circle-check')[0].style.display = 'none';
+      document.getElementById("copy").classList.remove("copied");
+    }
+    catch (e) {
 
+    }
     //! generate a password according the options selected
     let result = '';
     let characters = '';
@@ -74,53 +76,55 @@ function App() {
     let symbols = '~!@#$%^&*()_+-=`"{}[];?.,><?/|:';
     let numbers = '0123456789'
 
-    if (passwordType.lowerCase) {
-      characters += smallLetters;
-    }
-    if (passwordType.upperCase) {
-      characters += capitals;
-    }
-    if (passwordType.symbols) {
-      characters += symbols;
-    }
-    if (passwordType.numbers) {
-      characters += numbers;
-    }
-    let lowerCaseFlag = true;
-    let upperCaseFlag = true;
-    let symbolsFlag = true;
-    let numbersFlag = true;
+    let currentLength = 0
 
-    for (let i = 0; i < length; i++) {
+    if (passwordType.lowerCase) {
       //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
-      
-      if (passwordType.lowerCase && lowerCaseFlag) {
-        lowerCaseFlag = false;
+      if (currentLength < length) {
+        currentLength++;
         result += smallLetters.charAt(Math.floor(Math.random() * smallLetters.length));
-      }
-      else if (passwordType.upperCase && upperCaseFlag) {
-        upperCaseFlag = false;
-        result += capitals.charAt(Math.floor(Math.random() * capitals.length));
-      }
-      else if (passwordType.symbols && symbolsFlag) {
-        symbolsFlag = false;
-        result += symbols.charAt(Math.floor(Math.random() * symbols.length));
-      }
-      else if (passwordType.numbers && numbersFlag) {
-        numbersFlag = false;
-        result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        characters += smallLetters;
       }
       else
-        result += characters.charAt(Math.floor(Math.random() * characters.length));
+        return result
+    }
+    if (passwordType.upperCase) {
+      if (currentLength < length) {
+        currentLength++;
+        result += capitals.charAt(Math.floor(Math.random() * capitals.length));
+        characters += capitals;
+      }
+      else
+        return result
+    }
+    if (passwordType.symbols) {
+      if (currentLength < length) {
+        currentLength++;
+        result += symbols.charAt(Math.floor(Math.random() * symbols.length));
+        characters += symbols;
+      }
+      else
+        return result
+    }
+    if (passwordType.numbers) {
+      if (currentLength < length) {
+        currentLength++;
+        result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        characters += numbers;
+      }
+      else
+        return result
     }
 
-    setPassword(result);
-  }
+    for (let i = currentLength; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
 
-  useEffect(() => {
+    return result;
+
     //! we need to generate a new password whenever the length or type changes or basically when the user wants a new one
-    generatePassword();
-  }, [length, refresh, passwordType.upperCase, passwordType.lowerCase, passwordType.symbols, passwordType.numbers]);
+  }, [length, refresh, passwordType.upperCase, passwordType.lowerCase, passwordType.symbols, passwordType.numbers])
+
 
   return (
     <div className="App">
@@ -129,7 +133,6 @@ function App() {
         <Password
           password={password}
           length={length}
-          setPassword={setPassword}
           setLength={setLength}
         />
       </div>

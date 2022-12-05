@@ -43,7 +43,8 @@ const Slider = (props) => {
                 </button>
                 <h3
                     className="copiedLabel"
-                    style={{ opacity: props.copiedLabelOpacity }}>
+                    style={{ opacity: props.copiedLabelOpacity }}
+                    >
                     Copied
                 </h3>
             </div>
