@@ -6,7 +6,6 @@ const Slider = (props) => {
 
     const change = (event) => {
         //! copy content to clipboard and change the copy button appearance 
-
         copyToClipBoard();
         event.currentTarget.firstChild.style.display = 'none';
         event.currentTarget.firstChild.nextSibling.style.display = 'inline-block';
@@ -30,9 +29,7 @@ const Slider = (props) => {
             <div
                 className="buttons">
                 <button
-                    onClick={() => {
-                        props.setRefresh(!props.refresh);
-                    }}>
+                    onClick={props.refreshPassword}>
                     <i className="fa-solid fa-arrows-rotate"></i>
                 </button>
                 <button

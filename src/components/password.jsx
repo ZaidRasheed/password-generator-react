@@ -29,11 +29,11 @@ const Password = (props) => {
                 className="strength"
                 style={{ color: color }}>{strength}
             </h2>
-            {/*//! select text on click */}
             <input
                 id="input"
                 className="password"
                 value={props.password}
+                //! to select text on click 
                 onClick={(event) => {
                     event.target.select();
                 }}

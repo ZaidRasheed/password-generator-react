@@ -1,4 +1,5 @@
 const Input = (props) => {
+    const { passwordType, changeInPasswordType } = props
     return (
         <div className="inputContainer">
             <div className="first">
@@ -15,41 +16,41 @@ const Input = (props) => {
             <div className="second">
                 <label className="form-control">
                     <input
-                        defaultChecked={props.upperCase}
+                        defaultChecked={passwordType.upperCase}
                         type="checkbox"
                         name="password type"
                         value="upperCase"
-                        onChange={props.changeInPasswordType} />
+                        onChange={changeInPasswordType} />
                     Upper Case
                 </label>
 
                 <label className="form-control">
                     <input
-                        defaultChecked={props.lowerCase}
+                        defaultChecked={passwordType.lowerCase}
                         type="checkbox"
                         name="password type"
                         value="lowerCase"
-                        onChange={props.changeInPasswordType} />
+                        onChange={changeInPasswordType} />
                     Lower Case
                 </label>
 
                 <label className="form-control">
                     <input
-                        defaultChecked={props.numbers}
+                        defaultChecked={passwordType.numbers}
                         type="checkbox"
                         name="password type"
                         value="numbers"
-                        onChange={props.changeInPasswordType} />
+                        onChange={changeInPasswordType} />
                     Numbers
                 </label>
 
                 <label className="form-control">
                     <input
-                        defaultChecked={props.symbols}
+                        defaultChecked={passwordType.symbols}
                         type="checkbox"
                         name="password type"
                         value="symbols"
-                        onChange={props.changeInPasswordType} />
+                        onChange={changeInPasswordType} />
                     Symbols
                 </label>
             </div>
