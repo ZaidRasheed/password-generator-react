@@ -14,8 +14,8 @@ function App() {
     changeInPasswordType,
     changeInSlider,
     refreshPassword,
-    copiedLabelOpacity,
-    setCopiedLabelOpacity } = usePassword()
+    copied,
+    setCopied } = usePassword()
 
   return (
     <div className="App">
@@ -40,8 +40,8 @@ function App() {
           changeInSlider={changeInSlider}
           refreshPassword={refreshPassword}
           password={password}
-          setCopiedLabelOpacity={setCopiedLabelOpacity}
-          copiedLabelOpacity={copiedLabelOpacity}
+          setCopied={setCopied}
+          copied={copied}
         />
       </div>
     </div>

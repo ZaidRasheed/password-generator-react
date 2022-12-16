@@ -7,7 +7,7 @@ const Input = (props) => {
                 <input
                     className='manualInput'
                     type="number"
-                    min="1"
+                    min="4"
                     max="40"
                     value={props.length}
                     onChange={props.changeInSlider}

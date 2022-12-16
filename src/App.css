@@ -31,11 +31,10 @@ body {
 }
 
 .slider {
-  background: linear-gradient(to right, #415771 0%, #415771 30%, #c2daf1 30%, #c2daf1 100%);
+  background: linear-gradient(to right, #415771 0%, #415771 25%, #c2daf1 25%, #c2daf1 100%);
   border: 2px solid #fff;
   border-radius: 8px;
   height: 10px;
-  /* min-width: 250px; */
   width: 80%;
   outline: none;
   transition: background 450ms ease-in;
@@ -61,7 +60,6 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 25px;
   width: 25px;
-  /* border: 1px solid  rgba(0, 0, 0, 0.6); */
   border-radius: 50%;
   background: #112D4E;
   cursor: pointer;
@@ -176,19 +174,27 @@ input[type="checkbox"]:checked::before {
   background-color: transparent;
   font-size: 2.5rem;
   padding: 5px;
-  transition: ease-in 0.2s;
+  transition: ease-in 0.25s;
   border-radius: 8px;
   margin: 0 10px;
 }
 
-#copy {
-  transition: ease-in 0.3s;
-}
 
 #copy.copied {
   color: white;
   background-color: #2EB086;
   border: solid 2px #2EB086;
+}
+
+.buttons button:disabled {
+  color: #545d5a;
+  border: solid 2px #545d5a;
+}
+
+.buttons button:disabled:hover {
+  color: #545d5a;
+  cursor: not-allowed;
+  background-color: transparent;
 }
 
 .copiedLabel {
@@ -209,6 +215,20 @@ input[type="checkbox"]:checked::before {
 .strength {
   text-align: center;
   font-size: 30px;
+}
+
+.fa-arrows-rotate.rotate {
+  animation: rotation 0.4s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width:400px) {

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 const Password = (props) => {
 
+    const { password, length } = props
+
     const [color, setColor] = useState("")
 
     const [strength, setStrength] = useState("Average")
@@ -9,11 +11,11 @@ const Password = (props) => {
     //! change strength of password and color according to its length 
 
     useEffect(() => {
-        if (props.length < 8) {
+        if (length < 8) {
             setColor("#EB1D36");
             setStrength("Weak");
         }
-        else if (props.length < 14) {
+        else if (length < 14) {
             setColor("#E6B325");
             setStrength("Average");
         }
@@ -21,18 +23,17 @@ const Password = (props) => {
             setColor("#2B7A0B");
             setStrength("Strong");
         }
-    }, [props.length])
+    }, [length])
 
     return (
         <>
-            <h2
-                className="strength"
-                style={{ color: color }}>{strength}
+            <h2 className="strength" style={{ color: password.length > 3 ? color : '#112D4E' }}>
+                {password.length > 3 ? strength : 'No password'}
             </h2>
             <input
                 id="input"
                 className="password"
-                value={props.password}
+                value={password}
                 //! to select text on click 
                 onClick={(event) => {
                     event.target.select();
