@@ -42,15 +42,17 @@
 
 //! change the copy button back to normal
 
+//! copy content to clipboard and change the copy button appearance 
+
 //! generate a password according the options selected
 
 //! the refresh for a new password
 
 //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
 
-//! we also need to change the fill color length to make move with the thumb
+//! we also need to change the fill color length to make it move with the thumb
 
-//! we need to generate a new password whenever the length or type changes or basically when the user wants a new one
+//! we need to generate a new password whenever the length or type changes or when the user wants a new one
 
 //! when the content of the desired password changes we have to update the requirements
 
