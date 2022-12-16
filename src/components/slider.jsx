@@ -27,7 +27,6 @@ const Slider = (props) => {
             <div
                 className="slideContainer">
                 <input
-                    id="myInput"
                     //! we also need to change the fill color length to make it move with the thumb
                     style={{ background: `linear-gradient(to right, #415771 0%, #415771 ${(length - 4) / 36 * 100}%, #c2daf1 ${(length - 4) / 36 * 100}%, #c2daf1 100%)` }}
                     type="range"

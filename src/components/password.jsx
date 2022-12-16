@@ -31,7 +31,6 @@ const Password = (props) => {
                 {password.length > 3 ? strength : 'No password'}
             </h2>
             <input
-                id="input"
                 className="password"
                 value={password}
                 //! to select text on click 
