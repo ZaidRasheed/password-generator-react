@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Slider = (props) => {
     const { copied, password, setCopied, length, changeInSlider, refreshPassword } = props
@@ -6,15 +6,24 @@ const Slider = (props) => {
     const copyToClipBoard = () => {
         navigator.clipboard.writeText(password);
     }
-    const [rotate, setRotate] = useState(false)
+
+    const [refreshed, setRefreshed] = useState(0)
 
     const handleRefresh = () => {
-        setRotate(prev => !prev)
         refreshPassword()
-        setTimeout(() => setRotate(prev => !prev), 400)
+        setRefreshed(1)
     }
 
-    const change = (event) => {
+    useEffect(() => {
+        if (refreshed) {
+            const timOut = setTimeout(() => setRefreshed(2), 400)
+            return () => {
+                clearTimeout(timOut)
+            };
+        }
+    }, [refreshed]);
+
+    const change = () => {
         //! copy content to clipboard and change the copy button appearance 
         if (password.length > 0) {
             copyToClipBoard();
@@ -41,7 +50,7 @@ const Slider = (props) => {
                 <button
                     onClick={handleRefresh}
                     disabled={password.length === 0}>
-                    <i className={`fa-solid fa-arrows-rotate ${rotate ? 'rotate' : ''}`}></i>
+                    <i className={`fa-solid fa-arrows-rotate ${refreshed===1 ? 'rotate' : ''}`}></i>
                 </button>
                 <button
                     id="copy"
