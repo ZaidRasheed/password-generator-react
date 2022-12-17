@@ -61,7 +61,7 @@ export default function usePassword() {
         const types = {
             lowerCase: 'abcdefghijklmnopqrstuvwxyz',
             upperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            symbols: '~!@#$%^&*()_+-=`"{}[];?.,><?/|:',
+            symbols: '`~!@#$%^&*()_-=+|\\}] {[,<>.?/:;"'+"'",
             numbers: '0123456789'
         }
 

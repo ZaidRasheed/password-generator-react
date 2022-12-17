@@ -1,9 +1,10 @@
 import './App.css';
-import Slider from './components/slider';
-import Input from './components/input';
-import Password from './components/password';
-import usePassword from './hooks/usePassword';
 
+import Input from './components/Input';
+import Password from './components/Password';
+import usePassword from './hooks/usePassword';
+import Slider from './components/Slider';
+import CopyAndRefresh from './components/CopyAndRefresh';
 function App() {
 
   const {
@@ -23,7 +24,6 @@ function App() {
         <h1 className='title'>Password Generator</h1>
         <Password
           password={password}
-          length={length}
           setLength={setLength}
         />
       </div>
@@ -36,10 +36,11 @@ function App() {
         />
         <Slider
           length={length}
-          setLength={setLength}
           changeInSlider={changeInSlider}
-          refreshPassword={refreshPassword}
+        />
+        <CopyAndRefresh
           password={password}
+          refreshPassword={refreshPassword}
           setCopied={setCopied}
           copied={copied}
         />
