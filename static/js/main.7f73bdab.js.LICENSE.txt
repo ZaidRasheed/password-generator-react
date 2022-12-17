@@ -38,6 +38,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+//! Any password with 15+ is considered strong regardless of it's content
+
+//! Letters are harder to guess than numbers we check before testing for numbers if we have decent amount of letters then its strong
+
 //! change strength of password and color according to its length 
 
 //! change the copy button back to normal
