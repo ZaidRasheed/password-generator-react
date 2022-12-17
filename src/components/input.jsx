@@ -1,5 +1,5 @@
 const Input = (props) => {
-    const { passwordType, changeInPasswordType } = props
+    const { passwordType, changeInPasswordType, length, changeInLength } = props
     return (
         <div className="inputContainer">
             <div className="first">
@@ -9,8 +9,8 @@ const Input = (props) => {
                     type="number"
                     min="4"
                     max="40"
-                    value={props.length}
-                    onChange={props.changeInSlider}
+                    value={length}
+                    onChange={changeInLength}
                 />
             </div>
             <div className="second">

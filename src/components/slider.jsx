@@ -1,5 +1,5 @@
 const Slider = (props) => {
-    const { length, changeInSlider } = props
+    const { length, changeInLength } = props
     return (
         <div
             className="slideContainer">
@@ -11,7 +11,7 @@ const Slider = (props) => {
                 max="40"
                 className="slider"
                 value={length}
-                onChange={changeInSlider} />
+                onChange={changeInLength} />
         </div>
     )
 }

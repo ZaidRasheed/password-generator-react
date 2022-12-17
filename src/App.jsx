@@ -13,7 +13,7 @@ function App() {
     setLength,
     passwordType,
     changeInPasswordType,
-    changeInSlider,
+    changeInLength,
     refreshPassword,
     copied,
     setCopied } = usePassword()
@@ -30,13 +30,13 @@ function App() {
       <div className='sections'>
         <Input
           length={length}
-          changeInSlider={changeInSlider}
+          changeInLength={changeInLength}
           passwordType={passwordType}
           changeInPasswordType={changeInPasswordType}
         />
         <Slider
           length={length}
-          changeInSlider={changeInSlider}
+          changeInLength={changeInLength}
         />
         <CopyAndRefresh
           password={password}

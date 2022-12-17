@@ -33,7 +33,7 @@ export default function usePassword() {
         setRefresh(prev => !prev)
     }
 
-    const changeInSlider = (event) => {
+    const changeInLength = (event) => {
         //! whenever the slider value changes we have to change the value of manual input accordingly
         let num = event.target.value
         if (!num || num < 4) {
@@ -61,7 +61,7 @@ export default function usePassword() {
         const types = {
             lowerCase: 'abcdefghijklmnopqrstuvwxyz',
             upperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            symbols: '`~!@#$%^&*()_-=+|\\}] {[,<>.?/:;"'+"'",
+            symbols: '`~!@#$%^&*()_-=+|\\}] {[,<>.?/:;"' + "'",
             numbers: '0123456789'
         }
 
@@ -92,7 +92,7 @@ export default function usePassword() {
         passwordType,
         password,
         refreshPassword,
-        changeInSlider,
+        changeInLength,
         changeInPasswordType,
         copied,
         setCopied
