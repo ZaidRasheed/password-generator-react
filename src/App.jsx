@@ -2,7 +2,7 @@ import './App.css';
 
 import Input from './components/Input';
 import Password from './components/Password';
-import usePassword from './hooks/usePassword';
+import usePassword from './hooks/usePassword/usePassword';
 import Slider from './components/Slider';
 import CopyAndRefresh from './components/CopyAndRefresh';
 function App() {

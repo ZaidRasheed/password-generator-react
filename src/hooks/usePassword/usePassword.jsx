@@ -1,6 +1,12 @@
-import { useState, useMemo } from 'react'
+import { useState, useEffect } from 'react'
+import generatePassword from './generatePassword/generatePassword';
 
 export default function usePassword() {
+
+    //! the password
+    const [password, setPassword] = useState('')
+
+    //! its length 
     const [length, setLength] = useState(12);
 
     //! the refresh for a new password
@@ -8,6 +14,8 @@ export default function usePassword() {
 
     //! the copied label displayed when the user copies the password
     const [copied, setCopied] = useState(false);
+
+
 
     const [passwordType, setPasswordType] = useState({
         upperCase: true,
@@ -47,43 +55,12 @@ export default function usePassword() {
         }
     }
 
-    //! the password
-    const password = useMemo(() => {
-
+    useEffect(() => {
         //! change the copy button back to normal
         setCopied(false);
-
-        //! generate a password according the options selected
-        let result = '';
-        let characters = '';
-
-        //! all the password options
-        const types = {
-            lowerCase: 'abcdefghijklmnopqrstuvwxyz',
-            upperCase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-            symbols: '`~!@#$%^&*()_-=+|\\}] {[,<>.?/:;"' + "'",
-            numbers: '0123456789'
-        }
-
-        let currentLength = 0
-
-        //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
-        for (const prop in types) {
-            if (passwordType[prop]) {
-                result += types[prop].charAt(Math.floor(Math.random() * types[prop].length))
-                characters += types[prop]
-                currentLength++;
-            }
-        }
-
-
-        for (let i = currentLength; i < length; i++) {
-            result += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-
-        return result;
-
-        //! we need to generate a new password whenever the length or type changes or when the user wants a new one
+        setPassword(prev => {
+            return generatePassword(length, passwordType, prev)
+        })
     }, [length, refresh, passwordType.upperCase, passwordType.lowerCase, passwordType.symbols, passwordType.numbers])
 
     return {
