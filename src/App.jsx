@@ -1,7 +1,7 @@
 import './App.css';
 
 import Input from './components/Input';
-import Password from './components/Password';
+import Password from './components/Password/Password';
 import usePassword from './hooks/usePassword/usePassword';
 import Slider from './components/Slider';
 import CopyAndRefresh from './components/CopyAndRefresh';

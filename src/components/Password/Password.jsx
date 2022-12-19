@@ -1,37 +1,5 @@
 import { useEffect, useState } from "react";
-
-function passwordTester(string) {
-    let score = 0
-    
-    if (/[A-Z]/.test(string) || /[a-z]/.test(string))
-        score++;
-
-    if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~\s]/.test(string))
-        score++;
-
-    //! for numbers only password 
-    if ((string.length>=10 && string.length<15) && !score)
-        return 'average'
-
-    //! Letters are harder to guess than numbers we check before testing for numbers if we have decent amount of letters then its strong
-    if (string.length >= 10 && score)
-        return 'strong'
-
-    //! Any password with 15+ is considered strong regardless of it's content
-    if (string.length >= 15)
-        return 'strong'
-
-    if (/\d/.test(string))
-        score++;
-
-    if ((score === 3 && string.length >= 8) || (score === 2 && string.length >= 11))
-        return 'strong'
-    else if ((score === 2 && (string.length <= 10 && string.length >= 7)) || (score === 3 && string.length === 7))
-        return 'average'
-    else
-        return 'weak'
-
-}
+import passwordTester from "./testPasswordStrength";
 
 const Password = (props) => {
 
