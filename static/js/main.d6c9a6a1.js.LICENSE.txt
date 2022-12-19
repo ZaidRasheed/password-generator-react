@@ -38,9 +38,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-//! Any password with 15+ is considered strong regardless of it's content
-
 //! Letters are harder to guess than numbers we check before testing for numbers if we have decent amount of letters then its strong
+
+//! all the password options
 
 //! change strength of password and color according to its length 
 
@@ -48,15 +48,19 @@
 
 //! copy content to clipboard and change the copy button appearance 
 
+//! for numbers only password 
+
 //! generate a password according the options selected
 
-//! the refresh for a new password
+//! its length 
+
+//! make sure the password returned is always different than the previous one
+
+//! the password
 
 //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
 
 //! we also need to change the fill color length to make it move with the thumb
-
-//! we need to generate a new password whenever the length or type changes or when the user wants a new one
 
 //! when the content of the desired password changes we have to update the requirements
 
