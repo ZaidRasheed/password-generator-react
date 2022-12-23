@@ -1,5 +1,22 @@
 const Input = (props) => {
     const { passwordType, changeInPasswordType, length, changeInLength } = props
+
+    const options = []
+    for (const type in passwordType) {
+        const name = `${type}`.replace(/([A-Z])/g, ' $1')
+        options.push(
+            <label key={type} className="form-control">
+                <input
+                    defaultChecked={passwordType[type]}
+                    type="checkbox"
+                    name="password type"
+                    value={type}
+                    onChange={changeInPasswordType} />
+                {name.charAt(0).toUpperCase() + name.slice(1)}
+            </label>
+        )
+    }
+
     return (
         <div className="inputContainer">
             <div className="first">
@@ -14,45 +31,7 @@ const Input = (props) => {
                 />
             </div>
             <div className="second">
-                <label className="form-control">
-                    <input
-                        defaultChecked={passwordType.upperCase}
-                        type="checkbox"
-                        name="password type"
-                        value="upperCase"
-                        onChange={changeInPasswordType} />
-                    Upper Case
-                </label>
-
-                <label className="form-control">
-                    <input
-                        defaultChecked={passwordType.lowerCase}
-                        type="checkbox"
-                        name="password type"
-                        value="lowerCase"
-                        onChange={changeInPasswordType} />
-                    Lower Case
-                </label>
-
-                <label className="form-control">
-                    <input
-                        defaultChecked={passwordType.numbers}
-                        type="checkbox"
-                        name="password type"
-                        value="numbers"
-                        onChange={changeInPasswordType} />
-                    Numbers
-                </label>
-
-                <label className="form-control">
-                    <input
-                        defaultChecked={passwordType.symbols}
-                        type="checkbox"
-                        name="password type"
-                        value="symbols"
-                        onChange={changeInPasswordType} />
-                    Symbols
-                </label>
+                {options}
             </div>
         </div>
     )

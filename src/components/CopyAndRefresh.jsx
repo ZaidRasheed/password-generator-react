@@ -4,7 +4,7 @@ export default function CopyAndRefresh(props) {
     const { copied, password, setCopied, refreshPassword } = props
 
     const copyToClipBoard = () => {
-        navigator.clipboard.writeText(password);
+        navigator.clipboard?.writeText(password);
     }
 
     const [refreshed, setRefreshed] = useState(0)
@@ -35,13 +35,14 @@ export default function CopyAndRefresh(props) {
             className="buttons">
             <button
                 onClick={handleRefresh}
-                disabled={password.length === 0}>
+                disabled={password?.length === 0}
+                aria-label='refresh password'>
                 <i className={`fa-solid fa-arrows-rotate ${refreshed === 1 ? 'rotate' : ''}`}></i>
             </button>
             <button
                 id="copy"
                 className={copied ? 'copied' : ''}
-                disabled={password.length === 0}
+                disabled={password?.length === 0}
                 onClick={handleCopy}>
                 <i style={{ display: !copied ? 'inline-block' : 'none' }} className="fa-solid fa-copy"></i>
                 <i style={{ display: !copied ? 'none' : 'inline-block' }} className="fa-solid fa-circle-check"></i>

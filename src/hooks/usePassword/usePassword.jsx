@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import generatePassword from './generatePassword/generatePassword';
+import generatePassword from './generatePassword';
 
 export default function usePassword() {
 

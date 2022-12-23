@@ -37,10 +37,11 @@ const Password = (props) => {
 
     return (
         <>
-            <h2 className="strength" style={{ color: password.length > 3 ? color : '#112D4E' }}>
+            <h2 className="strength" data-testid='strength' style={{ color: password.length > 3 ? color : '#112D4E' }}>
                 {password.length > 3 ? strength : 'No password'}
             </h2>
             <input
+                data-testid='password'
                 className="password"
                 value={password}
                 //! to select text on click 

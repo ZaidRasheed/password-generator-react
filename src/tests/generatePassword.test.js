@@ -1,4 +1,4 @@
-import generatePassword from "./generatePassword";
+import generatePassword from "../hooks/usePassword/generatePassword";
 
 describe('Tests Generate password function', () => {
     test('Gives the correct length', () => {
@@ -28,7 +28,7 @@ describe('Tests Generate password function', () => {
     });
 
     test('Gives the correct dataType (Upper Case)', () => {
-        
+
         const dataTypes = {
             upperCase: true,
             lowerCase: false,
@@ -40,7 +40,7 @@ describe('Tests Generate password function', () => {
     });
 
     test('Gives the correct dataType (Lower Case)', () => {
-        
+
         const dataTypes = {
             upperCase: false,
             lowerCase: true,
@@ -52,7 +52,7 @@ describe('Tests Generate password function', () => {
     });
 
     test('Gives the correct dataType (Number)', () => {
-        
+
         const dataTypes = {
             upperCase: false,
             lowerCase: false,
@@ -64,7 +64,7 @@ describe('Tests Generate password function', () => {
     });
 
     test('Gives the correct dataType (Symbols)', () => {
-        
+
         const dataTypes = {
             upperCase: false,
             lowerCase: false,
