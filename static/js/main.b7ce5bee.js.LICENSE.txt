@@ -38,7 +38,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+//! -> the same logic from the testing function
+
+//! Any password with 15+ is considered strong regardless of it's content
+
 //! Letters are harder to guess than numbers we check before testing for numbers if we have decent amount of letters then its strong
+
+//! Making sure automatically generated passwords don't contain enough duplicates by implementing
 
 //! all the password options
 
@@ -48,9 +54,17 @@
 
 //! copy content to clipboard and change the copy button appearance 
 
+//! first check for duplicates and see how often they occur relative to the size of the string
+
 //! for numbers only password 
 
 //! generate a password according the options selected
+
+//! if more than 3 of the characters are duplicates and length <15 then it's average
+
+//! if more than 40% duplicates and length is < 20 password is weak
+
+//! if more than two duplicates and length <=10 then it's weak
 
 //! its length 
 
