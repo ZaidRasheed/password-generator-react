@@ -1,5 +1,9 @@
 export default function generatePassword(length, passwordType, oldPassword = '') {
-    let result = '';
+    if (!length)
+        return ''
+
+        
+    let result = ''
     let repeat = false
 
     //! make sure the password returned is always different than the previous one
@@ -46,7 +50,7 @@ export default function generatePassword(length, passwordType, oldPassword = '')
         else
             repeat = false
 
-    } while ((result === oldPassword || repeat) && oldPassword.length > 0)
+    } while ((result === oldPassword || repeat) && oldPassword.length !== 0)
 
     return result;
 }
