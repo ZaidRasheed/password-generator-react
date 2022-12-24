@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect'
 
 describe('Password component test', () => {
 
-    test('Password text and color change when the length is 0', async () => {
+    test('Display correct text and color when the length is 0', async () => {
         render(<Password password='' />)
 
         const strength = screen.getByTestId('strength')
@@ -14,7 +14,7 @@ describe('Password component test', () => {
         expect(strength).toHaveTextContent('No password')
     })
 
-    test('Show correct text and color for strong password', async () => {
+    test('Display correct text and color for strong password', async () => {
         render(<Password password='2dhG@3.lc(' />)
 
         const strength = screen.getByTestId('strength')
@@ -24,7 +24,7 @@ describe('Password component test', () => {
         expect(strength).toHaveTextContent('Strong')
     })
 
-    test('Show correct text and color for average password', async () => {
+    test('Display correct text and color for average password', async () => {
         render(<Password password='rV2XK9sHh' />)
 
         const strength = screen.getByTestId('strength')
@@ -34,7 +34,7 @@ describe('Password component test', () => {
         expect(strength).toHaveTextContent('Average')
     })
 
-    test('Show correct text and color for weak password', async () => {
+    test('Display correct text and color for weak password', async () => {
         render(<Password password='123456' />)
 
         const strength = screen.getByTestId('strength')

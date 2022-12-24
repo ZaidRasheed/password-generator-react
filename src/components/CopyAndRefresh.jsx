@@ -41,6 +41,7 @@ export default function CopyAndRefresh(props) {
             </button>
             <button
                 id="copy"
+                aria-label='copy password'
                 className={copied ? 'copied' : ''}
                 disabled={password?.length === 0}
                 onClick={handleCopy}>

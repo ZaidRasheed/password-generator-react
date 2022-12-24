@@ -22,6 +22,7 @@ const Input = (props) => {
             <div className="first">
                 <h1>Length: </h1>
                 <input
+                    data-testid='length'
                     className='manualInput'
                     type="number"
                     min="4"
