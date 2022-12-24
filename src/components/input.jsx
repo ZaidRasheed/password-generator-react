@@ -1,5 +1,5 @@
 const Input = (props) => {
-    const { passwordType, changeInPasswordType, length, changeInLength } = props
+    const { passwordType, changeInPasswordType, displayedLength, changeInLength } = props
 
     const options = []
     for (const type in passwordType) {
@@ -25,9 +25,9 @@ const Input = (props) => {
                     data-testid='length'
                     className='manualInput'
                     type="number"
-                    min="4"
+                    min="0"
                     max="40"
-                    value={length}
+                    value={displayedLength}
                     onChange={changeInLength}
                 />
             </div>

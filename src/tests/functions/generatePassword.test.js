@@ -1,8 +1,8 @@
-import generatePassword from "../hooks/usePassword/generatePassword";
+import generatePassword from "../../hooks/usePassword/generatePassword";
 
 describe('Tests Generate password function', () => {
     test('Gives the correct length', () => {
-        const randomLength = Math.floor(Math.random() * (40 - 4 + 1) + 4)
+        const randomLength = Math.floor(Math.random() * (40))
         const dataTypes = {
             upperCase: true,
             lowerCase: true,
@@ -74,5 +74,17 @@ describe('Tests Generate password function', () => {
         const password = generatePassword(4, dataTypes)
         let regex = /^[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~\s]*$/;
         expect(regex.test(password)).toBe(true)
+    });
+
+    test('Gives the correct length', () => {
+
+        const dataTypes = {
+            upperCase: true,
+            lowerCase: true,
+            numbers: true,
+            symbols: true,
+        }
+        const password = generatePassword(0, dataTypes)
+        expect(password).toHaveLength(0)
     });
 })

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import CopyAndRefresh from "../components/CopyAndRefresh";
+import CopyAndRefresh from "../../components/CopyAndRefresh";
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Testing Input Component', () => {

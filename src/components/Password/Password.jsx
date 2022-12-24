@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import passwordTester from "./testPasswordStrength";
 
 const Password = (props) => {
-
-    const { password } = props
+    const { password, setDisplayedLength, setPassword } = props
 
     const [color, setColor] = useState("")
 
     const [strength, setStrength] = useState("Average")
 
+    const updateUserPassword = (e) => {
+        setPassword(e.target.value)
+        setDisplayedLength(e.target.value.length)
+    }
+
+
     //! change strength of password and color according to its length 
-
     useEffect(() => {
-
         const strength = passwordTester(password)
-
         switch (strength) {
             case 'strong':
                 setColor("#2B7A0B");
@@ -32,13 +34,12 @@ const Password = (props) => {
                 setColor("#EB1D36");
                 setStrength("Weak");
         }
-
     }, [password])
 
     return (
         <>
-            <h2 className="strength" data-testid='strength' style={{ color: password.length > 3 ? color : '#112D4E' }}>
-                {password.length > 3 ? strength : 'No password'}
+            <h2 className="strength" data-testid='strength' style={{ color: password.length > 0 ? color : '#112D4E' }}>
+                {password.length > 0 ? strength : 'No password'}
             </h2>
             <input
                 data-testid='password'
@@ -49,7 +50,7 @@ const Password = (props) => {
                     event.target.select();
                 }}
                 maxLength="40"
-                readOnly
+                onChange={updateUserPassword}
             />
         </>
     )

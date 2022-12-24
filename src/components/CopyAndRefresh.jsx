@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function CopyAndRefresh(props) {
-    const { copied, password, setCopied, refreshPassword } = props
+    const { copied, password, copyPassword, refreshPassword, displayedLength } = props
 
     const copyToClipBoard = () => {
         navigator.clipboard?.writeText(password);
@@ -27,7 +27,7 @@ export default function CopyAndRefresh(props) {
         //! copy content to clipboard and change the copy button appearance 
         if (password.length > 0) {
             copyToClipBoard();
-            setCopied(true);
+            copyPassword();
         }
     }
     return (
@@ -35,7 +35,7 @@ export default function CopyAndRefresh(props) {
             className="buttons">
             <button
                 onClick={handleRefresh}
-                disabled={password?.length === 0}
+                disabled={password.length === 0}
                 aria-label='refresh password'>
                 <i className={`fa-solid fa-arrows-rotate ${refreshed === 1 ? 'rotate' : ''}`}></i>
             </button>
@@ -43,7 +43,7 @@ export default function CopyAndRefresh(props) {
                 id="copy"
                 aria-label='copy password'
                 className={copied ? 'copied' : ''}
-                disabled={password?.length === 0}
+                disabled={password.length === 0}
                 onClick={handleCopy}>
                 <i style={{ display: !copied ? 'inline-block' : 'none' }} className="fa-solid fa-copy"></i>
                 <i style={{ display: !copied ? 'none' : 'inline-block' }} className="fa-solid fa-circle-check"></i>

@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import '@testing-library/jest-dom/extend-expect'
 
-import App from '../App'
+import App from '../../App'
 describe('Testing App', () => {
 
     test('Password changes on refresh', async () => {

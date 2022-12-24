@@ -9,14 +9,15 @@ function App() {
 
   const {
     password,
-    length,
-    setLength,
+    setPassword,
+    displayedLength,
+    setDisplayedLength,
     passwordType,
     changeInPasswordType,
     changeInLength,
     refreshPassword,
     copied,
-    setCopied } = usePassword()
+    copyPassword } = usePassword()
 
   return (
     <div className="App">
@@ -24,24 +25,25 @@ function App() {
         <h1 className='title'>Password Generator</h1>
         <Password
           password={password}
-          setLength={setLength}
+          setDisplayedLength={setDisplayedLength}
+          setPassword={setPassword}
         />
       </div>
       <div className='sections'>
         <Input
-          length={length}
+          displayedLength={displayedLength}
           changeInLength={changeInLength}
           passwordType={passwordType}
           changeInPasswordType={changeInPasswordType}
         />
         <Slider
-          length={length}
+          displayedLength={displayedLength}
           changeInLength={changeInLength}
         />
         <CopyAndRefresh
           password={password}
           refreshPassword={refreshPassword}
-          setCopied={setCopied}
+          copyPassword={copyPassword}
           copied={copied}
         />
       </div>

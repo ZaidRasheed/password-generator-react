@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Password from "../components/Password/Password"
+import Password from "../../components/Password/Password"
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Password component test', () => {
