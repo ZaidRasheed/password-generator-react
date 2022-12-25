@@ -14,14 +14,14 @@ describe('Testing App', () => {
 
         const finalPassword = screen.getByTestId('password').value
 
-        expect(initialPassword).not.toEqual(finalPassword)
+        expect(initialPassword).not.toBe(finalPassword)
     })
 
     test('Password and length change when slider changes', async () => {
         render(<App />)
         const initialPassword = screen.getByTestId('password').value
         const initialLength = screen.getByTestId('length').value
-        expect(initialLength).toEqual('12')
+        expect(initialLength).toBe('12')
 
         const slider = screen.getByTestId('slider')
         fireEvent.change(slider, { target: { value: 13 } })
@@ -29,7 +29,7 @@ describe('Testing App', () => {
         const finalPassword = screen.getByTestId('password').value
         const finalLength = screen.getByTestId('length').value
 
-        expect(initialPassword).not.toEqual(finalPassword)
-        expect(finalLength).toEqual('13')
+        expect(initialPassword).not.toBe(finalPassword)
+        expect(finalLength).toBe('13')
     })
 })
