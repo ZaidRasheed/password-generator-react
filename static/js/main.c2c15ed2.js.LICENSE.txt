@@ -40,9 +40,9 @@
 
 //! -> the same logic from the testing function
 
-//! Any password with 15+ is considered strong regardless of it's content
+//! Any password with 15+ is considered strong regardless of it's content if it passes the duplicates and not only numbers 
 
-//! Letters are harder to guess than numbers we check before testing for numbers if we have decent amount of letters then its strong
+//! Letters are harder to guess than numbers if we have decent amount of letters then its strong
 
 //! Making sure automatically generated passwords don't contain enough duplicates by implementing
 
@@ -54,25 +54,43 @@
 
 //! copy content to clipboard and change the copy button appearance 
 
-//! first check for duplicates and see how often they occur relative to the size of the string
+//! first check for duplicates and see how often they occur relative to the size of the string and its content
 
-//! for numbers only password 
+//! for letters and numbers only
+
+//! for lower length
+
+//! for one char type without symbols
 
 //! generate a password according the options selected
 
-//! if more than 3 of the characters are duplicates and length <15 then it's average
+//! if 3 the characters are duplicates and length <= 15
 
-//! if more than 40% duplicates and length is < 20 password is weak
+//! if 6 duplicates and all three char types then average
 
-//! if more than two duplicates and length <=10 then it's weak
+//! if duplicates >= 4 and length is <= 20 
+
+//! if exactly 4 duplicates and not all three char types then average
+
+//! if more than 3 the characters are duplicates and length <= 15
+
+//! if more than 4 duplicates and not all three char types then weak
+
+//! if more than 6 duplicates and all three char types then weak
+
+//! if percentage of duplicates is >=40% and length is >=20
 
 //! its length 
 
 //! make sure the password returned is always different than the previous one
 
+//! more than two duplicates and length <10
+
 //! the password
 
 //! to make sure theres at least one of each character type in the password we include one random and afterwards the remaining are random characters
+
+//! two duplicates and length <10 
 
 //! we also need to change the fill color length to make it move with the thumb
 
