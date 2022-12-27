@@ -32,4 +32,20 @@ describe('Testing App', () => {
         expect(initialPassword).not.toBe(finalPassword)
         expect(finalLength).toBe('13')
     })
+
+    test('Copy button changes color correctly by having the correct classes', async () => {
+        render(<App />)
+        const copyButton = screen.getByRole('button', { name: 'copy password' })
+        expect(copyButton).toBeEnabled()
+        expect(copyButton).not.toHaveClass('copied')
+
+        await userEvent.click(copyButton)
+        expect(copyButton).toHaveClass('copied')
+
+        const password = screen.getByTestId('password')
+        await userEvent.type(password, 'ued')
+
+        expect(copyButton).not.toHaveClass('copied')
+
+    })
 })

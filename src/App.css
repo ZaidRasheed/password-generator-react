@@ -171,7 +171,7 @@ input[type="checkbox"]:checked::before {
   cursor: pointer;
   color: #3F72AF;
   border: solid 2px #112D4E;
-  background-color: transparent;
+  background-color: white;
   font-size: 2.5rem;
   padding: 5px;
   transition: ease-in 0.25s;
@@ -194,7 +194,7 @@ input[type="checkbox"]:checked::before {
 .buttons button:disabled:hover {
   color: #545d5a;
   cursor: not-allowed;
-  background-color: transparent;
+  background-color: white;
 }
 
 .copiedLabel {
