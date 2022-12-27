@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import passwordTester from "./testPasswordStrength";
 
 const Password = (props) => {
-    const { password, setDisplayedLength, setPassword } = props
+    const { password, updateDisplayPasswordAndLength } = props
 
     const [color, setColor] = useState("")
 
     const [strength, setStrength] = useState("Average")
 
     const updateUserPassword = (e) => {
-        setPassword(e.target.value)
-        setDisplayedLength(e.target.value.length)
+        updateDisplayPasswordAndLength(e.target.value)
     }
 
 

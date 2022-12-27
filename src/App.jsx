@@ -9,9 +9,8 @@ function App() {
 
   const {
     password,
-    setPassword,
     displayedLength,
-    setDisplayedLength,
+    updateDisplayPasswordAndLength,
     passwordType,
     changeInPasswordType,
     changeInLength,
@@ -25,8 +24,7 @@ function App() {
         <h1 className='title'>Password Generator</h1>
         <Password
           password={password}
-          setDisplayedLength={setDisplayedLength}
-          setPassword={setPassword}
+          updateDisplayPasswordAndLength={updateDisplayPasswordAndLength}
         />
       </div>
       <div className='sections'>

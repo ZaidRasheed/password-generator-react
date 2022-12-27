@@ -47,6 +47,12 @@ export default function usePassword() {
         setCopied(true)
     }
 
+    const updateDisplayPasswordAndLength = (password) => {
+        setCopied(false)
+        setPassword(password)
+        setDisplayedLength(password.length)
+    }
+
     const changeInLength = (event) => {
         //! whenever the slider value changes we have to change the value of manual input accordingly
         let num = event.target.value
@@ -76,10 +82,9 @@ export default function usePassword() {
 
     return {
         displayedLength,
-        setDisplayedLength,
+        updateDisplayPasswordAndLength,
         passwordType,
         password,
-        setPassword,
         refreshPassword,
         changeInLength,
         changeInPasswordType,
