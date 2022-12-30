@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Password-generator-react/static/css/main.4ccf7375.css",
-    "main.js": "/Password-generator-react/static/js/main.c2c15ed2.js",
-    "index.html": "/Password-generator-react/index.html",
-    "main.4ccf7375.css.map": "/Password-generator-react/static/css/main.4ccf7375.css.map",
-    "main.c2c15ed2.js.map": "/Password-generator-react/static/js/main.c2c15ed2.js.map"
+    "main.css": "/password-generator-react/static/css/main.83788c12.css",
+    "main.js": "/password-generator-react/static/js/main.c2c15ed2.js",
+    "index.html": "/password-generator-react/index.html",
+    "main.83788c12.css.map": "/password-generator-react/static/css/main.83788c12.css.map",
+    "main.c2c15ed2.js.map": "/password-generator-react/static/js/main.c2c15ed2.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ccf7375.css",
+    "static/css/main.83788c12.css",
     "static/js/main.c2c15ed2.js"
   ]
 }
