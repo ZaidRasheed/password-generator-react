@@ -8,7 +8,7 @@ describe('Testing password testing function', () => {
         expect(passwordTester('aabbcdd')).toBe('weak')
 
         //! two duplicates and length < 10 
-        expect(passwordTester('aabbefrj')).toBe('average')
+        expect(passwordTester('aaefrjbb')).toBe('average')
     })
 
     test('Password with letters and numbers only', () => {
@@ -85,4 +85,15 @@ describe('Testing password testing function', () => {
         expect(passwordTester('Abc$er')).toBe('weak')
         expect(passwordTester('1S34.$')).toBe('weak')
     })
+
+    test('for increasing and decreasing characters back to back', () => {
+        expect(passwordTester('abcdefghiklmn')).toBe('weak')
+        expect(passwordTester('ABCDEFGHIJKLM@#&#')).toBe('weak')
+        expect(passwordTester('1234567890123456780')).toBe('weak')
+
+        expect(passwordTester('kjihgfedcba')).toBe('weak')
+        expect(passwordTester('KJIHGFEDBCA')).toBe('weak')
+        expect(passwordTester('9876543210987654321')).toBe('weak')
+    });
+
 })
